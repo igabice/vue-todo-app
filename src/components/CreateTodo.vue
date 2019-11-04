@@ -57,6 +57,8 @@ export default {
                 this.newTodoText = '';
             }
             this.isCreating = false;
+            this.titleText = '';
+            this.projectText = '';
 
         },
     },
