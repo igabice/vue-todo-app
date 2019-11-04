@@ -11,9 +11,11 @@
                     <span class='right floated edit icon' v-on:click="showForm">
                         <i class="edit icon"></i>
                     </span>
-                    //deleted icon for deleting todo
                     <span class='right floated edit icon' v-on:click="deleteTodo(todo)">
                         <i class="trash icon"></i>
+                    </span>
+                    <span class='right floated edit icon' v-on:click="completeTodo(todo)">
+                        <i class="play icon"></i>
                     </span>
                 </div>
             </div>
@@ -61,6 +63,9 @@ export default {
         },
         deleteTodo(todo) {
             this.$emit('delete-todo', todo);
+        },
+        completeTodo(todo){
+            this.$emit('complete-todo', todo);
         },
     },
 }

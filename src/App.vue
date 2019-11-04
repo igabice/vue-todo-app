@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
+   <create-todo v-on:create-todo='createTodo'></create-todo>
     <todo-list v-bind:todos="todos"></todo-list>
     
   </div>
@@ -8,11 +9,14 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld'
-import TodoList from './components/TodoList'
+import TodoList from './components/TodoList';
+import CreateTodo from './components/CreateTodo'
+
 export default {
   name: 'App',
   components: {
     TodoList,
+    CreateTodo
   },
   data() {
     return {
@@ -38,6 +42,15 @@ export default {
           done: false,
         }
       ]
+    }
+  },
+  methods: {
+    createTodo(todo){
+      this.todos.push({
+        title: todo.title,
+        project: todo.project,
+        done: false
+      });
     }
   },
 }
